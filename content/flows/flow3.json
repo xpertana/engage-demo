@@ -1,0 +1,241 @@
+{
+  "i": "bi_sg0ksz9",
+  "n": "avatar_build",
+  "I": "bi",
+  "ch": [
+    [
+      50,
+      {
+        "40": 1,
+        "flow": "_build_top"
+      }
+    ],
+    [
+      3,
+      {
+        "40": 3,
+        "52": [
+          {
+            "text": "Text Initials"
+          },
+          {
+            "text": "From Variable"
+          },
+          {
+            "text": "Icon"
+          }
+        ],
+        "156": {
+          "t": 1,
+          "n": "_ch"
+        }
+      }
+    ],
+    [
+      4,
+      {
+        "40": "copy",
+        "49": {
+          "t": 100,
+          "n": "choice"
+        },
+        "201": 100,
+        "copy": {
+          "t": 1,
+          "n": "_ch.text"
+        }
+      }
+    ],
+    [
+      8,
+      {
+        "40": "iffertext",
+        "49": {
+          "t": 1,
+          "n": "choice"
+        },
+        "59": [[99]],
+        "iffer": "is",
+        "args": ["Text Initials"]
+      }
+    ],
+    [
+      45,
+      {
+        "40": 1,
+        "64": -190,
+        "190": "This will create an two letter initials avatar"
+      }
+    ],
+    [
+      2,
+      {
+        "40": 6,
+        "64": -102,
+        "91": true,
+        "156": {
+          "t": 1,
+          "n": "_text"
+        },
+        "190": "Two Word to Create Initials Avatar",
+        "wait": true
+      }
+    ],
+    [
+      4,
+      {
+        "40": -190,
+        "49": {
+          "t": 1,
+          "n": "line"
+        },
+        "204": "avatar \"{_text}\""
+      }
+    ],
+    [
+      18,
+      {
+        "40": 2
+      }
+    ],
+    [
+      162,
+      {
+        "40": 2,
+        "49": {
+          "t": 1,
+          "n": "line"
+        }
+      }
+    ],
+    [
+      18,
+      {
+        "40": 2
+      }
+    ],
+    [
+      50,
+      {
+        "40": 1,
+        "flow": "_build_bottom"
+      }
+    ],
+    [55],
+    [
+      8,
+      {
+        "40": "iffertext",
+        "49": {
+          "t": 1,
+          "n": "choice"
+        },
+        "59": [[99]],
+        "iffer": "is",
+        "args": ["Icon"]
+      }
+    ],
+    [
+      50,
+      {
+        "40": 1,
+        "flow": "_geticon"
+      }
+    ],
+    [
+      4,
+      {
+        "40": -190,
+        "49": {
+          "t": 1,
+          "n": "line"
+        },
+        "204": "avatar +{icon.text}"
+      }
+    ],
+    [
+      162,
+      {
+        "40": 2,
+        "49": {
+          "t": 1,
+          "n": "line"
+        }
+      }
+    ],
+    [
+      50,
+      {
+        "40": 1,
+        "flow": "_build_bottom"
+      }
+    ],
+    [55],
+    [
+      8,
+      {
+        "40": "iffertext",
+        "49": {
+          "t": 1,
+          "n": "choice"
+        },
+        "59": [[99]],
+        "iffer": "is",
+        "args": ["From Variable"]
+      }
+    ],
+    [
+      3,
+      {
+        "40": 1,
+        "49": {
+          "t": 1,
+          "n": "variables"
+        },
+        "156": {
+          "t": 1,
+          "n": "_ch"
+        }
+      }
+    ],
+    [
+      4,
+      {
+        "40": -190,
+        "49": {
+          "t": 1,
+          "n": "line"
+        },
+        "204": "avatar {_ch_text}"
+      }
+    ],
+    [
+      162,
+      {
+        "40": 2,
+        "49": {
+          "t": 1,
+          "n": "line"
+        }
+      }
+    ],
+    [
+      50,
+      {
+        "40": 1,
+        "flow": "_build_bottom"
+      }
+    ],
+    [55],
+    [
+      57,
+      {
+        "40": 1
+      }
+    ]
+  ],
+  "serverexec": {},
+  "source": "run _build_top\n\nchoose _ch from options Text Initials,From Variable,Icon\nset choice to _ch.text\n\nif choice is \"Text Initials\" then\n    text \"This will create an two letter initials avatar\"\n    ask for _text \"Two Word to Create Initials Avatar\"\n    set line to 'avatar \"{_text}\"'\n    divider dotted\n    eval line\n    divider dotted\n    run _build_bottom\nendif\n\nif choice is \"Icon\" then\n    run _geticon\n    set line to \"avatar +{icon.text}\"\n    eval line\n    run _build_bottom\nendif\n\nif choice is \"From Variable\" then\n    choose _ch from variables\n    set line to \"avatar {_ch_text}\"\n    eval line\n    run _build_bottom\nendif\n\nwait\n",
+  "zt": 4200007,
+  "hmac": "7eb75c9bb8ad5a2275a897c9dbc843dca153ee42459a61ab25668d1efe3c33e4"
+}

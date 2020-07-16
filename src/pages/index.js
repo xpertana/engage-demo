@@ -27,7 +27,9 @@ const EngageCore = require("@xpertana/engage-core")
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
+
   const posts = data.allMarkdownRemark.edges
+  const flows = data.flows
 
   // const { version } = E.version()
 
@@ -39,6 +41,7 @@ const BlogIndex = ({ data, location }) => {
 
       {JSON.stringify(TEST)}
       {JSON.stringify(Object.keys(displayCmds.exec))}
+      {JSON.stringify(Object.keys(flows))}
 
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
