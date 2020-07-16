@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@xpertana/engage-core": "^0.7.9",
+    "@xpertana/engage-display-commands-exec": "^0.6.14",
     "@xpertana/engage-environments": "^0.5.6",
     "gatsby": "^2.23.12",
     "gatsby-image": "^2.4.9",

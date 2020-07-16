@@ -6,8 +6,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-// import EngageCore from "@xpertana/engage-core"
 import { TEST, PROD } from "@xpertana/engage-environments"
+
+const displayCmds = require("@xpertana/engage-display-commands-exec")
+const EngageCore = require("@xpertana/engage-core")
 
 // const E = new EngageCore({
 //   // parentHook,
@@ -36,6 +38,7 @@ const BlogIndex = ({ data, location }) => {
       {/* <h1>Engage v{version}</h1> */}
 
       {JSON.stringify(TEST)}
+      {JSON.stringify(Object.keys(displayCmds.exec))}
 
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
