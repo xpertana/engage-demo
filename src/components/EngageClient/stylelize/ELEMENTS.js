@@ -1,0 +1,23 @@
+const ELEMENTS = {
+  THEME: 10,
+  SCREEN: 11,
+  BODY: 12,
+  FRAME: 13,
+  TEXTBLOCK: 14,
+  TEXT: 15,
+  TITLE: 16,
+  SUBTEXT: 17,
+  FINEPRINT: 18,
+  SELECT: 19,
+  CHIP: 20,
+  INPUT: 21,
+  BUTTON: 22,
+  BUTTONBAR: 23,
+  CARD: 24,
+  SEPERATOR: 25,
+  IMAGE: 26,
+  SPEECH: 27,
+  SOUND: 28
+};
+
+export default ELEMENTS;
