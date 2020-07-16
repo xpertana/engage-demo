@@ -9,19 +9,19 @@ import { rhythm } from "../utils/typography"
 // import EngageCore from "@xpertana/engage-core"
 import { TEST, PROD } from "@xpertana/engage-environments"
 
-const E = new EngageCore({
-  // parentHook,
-  // ctx,
-  // idblok: props.idblok,
-  // autorun: props.flow,
-  // lsDriver,
-  // site,
-  // stage,
-  // tokens,
-  endpoints: TEST,
-  // refreshUI: this.refreshUI.bind(this),
-  mode: "display",
-})
+// const E = new EngageCore({
+//   // parentHook,
+//   // ctx,
+//   // idblok: props.idblok,
+//   // autorun: props.flow,
+//   // lsDriver,
+//   // site,
+//   // stage,
+//   // tokens,
+//   endpoints: TEST,
+//   // refreshUI: this.refreshUI.bind(this),
+//   mode: "display",
+// })
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
