@@ -29,16 +29,16 @@ const E = new EngageCore({
 })
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+  // const siteTitle = data.site.siteMetadata.title
 
-  const posts = data.allMarkdownRemark.edges
+  // const posts = data.allMarkdownRemark.edges
 
   const { version } = E.version()
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
+    <Layout location={location} title="YoYo">
+      {/* <SEO title="All posts" /> */}
+      {/* <Bio /> */}
       <h1>Engage v{version}</h1>
 
       {JSON.stringify(TEST)}
@@ -53,7 +53,7 @@ const BlogIndex = ({ data, location }) => {
         // idblok={this.state.idblok}
       />
 
-      {posts.map(({ node }) => {
+      {/* {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
           <article key={node.fields.slug}>
@@ -78,7 +78,7 @@ const BlogIndex = ({ data, location }) => {
             </section>
           </article>
         )
-      })}
+      })} */}
     </Layout>
   )
 }
