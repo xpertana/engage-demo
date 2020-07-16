@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-import EngageCore from "@xpertana/engage-core"
+// import EngageCore from "@xpertana/engage-core"
 import { TEST, PROD } from "@xpertana/engage-environments"
 
 const E = new EngageCore({
@@ -27,10 +27,16 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
+  const { version } = E.version()
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+      {/* <h1>Engage v{version}</h1> */}
+
+      {JSON.stringify(TEST)}
+
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
