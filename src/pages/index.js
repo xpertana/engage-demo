@@ -27,7 +27,7 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
-  const { version } = E.version()
+  // const { version } = E.version()
 
   return (
     <Layout location={location} title={siteTitle}>
