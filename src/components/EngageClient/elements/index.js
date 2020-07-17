@@ -31,7 +31,9 @@ import Item from "./Item"
 import ItemAction from "./ItemAction"
 import Link from "./Link"
 import List from "./List"
+import Loading from "./Loading"
 import Markdown from "./Markdown"
+import QRCode from "./QRCode"
 import Search from "./Search"
 import SignIn from "./SignIn"
 import Spacer from "./Spacer"
@@ -57,48 +59,46 @@ import TypeMethod from "./TypeMethod"
 
 const renderMap = {
   alert: props => <Alert {...props} />,
-  auth0Form: props => <Debug {...props} />,
   avatar: props => <Avatar {...props} />,
   badge: props => <Badge {...props} />,
   break: props => <Break {...props} />,
   button: props => <Button {...props} />,
-  buttongroup: props => <ButtonGroup {...props} />,
+  //buttongroup: props => <ButtonGroup {...props} />,
   // buttons: props => <Buttons {...props} />,
   // calendlyForm: props => <Calendly {...props} />,
   // card: props => <Card {...props} />,
   // checkbox: props => <CheckBox {...props} />,
   // chip: props => <Chip {...props} />,
   // code: props => <Code {...props} />,
-  // continue: props => <Continue {...props} />,
-  // ctx: props => <Ctx {...props} />,
+  continue: props => <Continue {...props} />,
+  ctx: props => <Ctx {...props} />,
   // date: props => <Debug {...props} />,
-  // debug: props => <Debug {...props} />,
-  // decode: props => <ElemDecode {...props} />,
-  // divider: props => <Divider {...props} />,
-  // error: props => <Error {...props} />,
+  debug: props => <Debug {...props} />,
+  divider: props => <Divider {...props} />,
+  error: props => <Error {...props} />,
   // //faq: props => <Faq {...props} />,
   // flow: props => <Flow {...props} />,
   // fontasset: props => <FontAsset {...props} />,
   // fonttag: props => <FontTag {...props} />,
   // form: props => <Debug {...props} />,
-  // grid: props => <Grid {...props} />,
+  grid: props => <Grid {...props} />,
   // headerimage: props => <HeaderImage {...props} />,
-  // heading: props => <Heading {...props} />,
+  heading: props => <Heading {...props} />,
   // hero: props => <Debug {...props} />,
   // icon: props => <Icon {...props} />,
   // image: props => <Image {...props} />,
   // input: props => <Input {...props} />,
   // item: props => <Item {...props} />,
   // itemaction: props => <ItemAction {...props} />,
-  // link: props => <Link {...props} />,
-  // list: props => <List {...props} />,
-  // loading: props => <Loading {...props} />,
+  link: props => <Link {...props} />,
+  list: props => <List {...props} />,
+  loading: props => <Loading {...props} />,
   // loginForm: props => <SignIn {...props} />,
   // //loginprocess: props => <LoginProcess {...props} />,
   // markdown: props => <Markdown {...props} />,
   // // profile: props => <Profile {...props} />,
   // //progress: props => <Progress {...props} />,
-  // qrcode: props => <QRCode {...props} />,
+  qrcode: props => <QRCode {...props} />,
   // search: props => <Search {...props} />,
   // secureInput: props => <Input {...props} />,
   // //sharenotice: props => <ShareNotice {...props} />,
@@ -111,14 +111,14 @@ const renderMap = {
   // table: props => <Table {...props} />,
   // //tabs: props => <Tabs {...props} />,
   // template: props => <Template {...props} />,
-  // text: props => <Text {...props} />,
+  text: props => <Text {...props} />,
   // textbox: props => <TextBox {...props} />,
   // textfield: props => <InputRaw {...props} />,
   // theme: props => <ThemePreview {...props} />,
   // time: props => <Time {...props} />,
   // switch: props => <Switch {...props} />,
   // typemethod: props => <TypeMethod {...props} />,
-  // typing: props => <TypedText {...props} />
+  typing: props => <TypedText {...props} />,
 }
 
 export default renderMap

@@ -23,6 +23,8 @@ import EngageCore from "@xpertana/engage-core"
 console.log("EC:")
 console.log(EngageCore)
 const engageDisplayExec = require("@xpertana/engage-display-commands-exec")
+const engageDisplayParse = require("@xpertana/engage-display-commands-parse")
+const engageCoreParse = require("@xpertana/engage-core-commands-parse")
 
 export default class EngageClient extends Component {
   constructor(props) {
@@ -46,6 +48,9 @@ export default class EngageClient extends Component {
 
     // commands for a display client
     this.E.extend(engageDisplayExec)
+    this.E.extend(engageDisplayParse)
+    this.E.extend(engageCoreParse)
+
     this.renderElement = renderElement
 
     this.state = {
