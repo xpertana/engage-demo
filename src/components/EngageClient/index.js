@@ -20,8 +20,6 @@ import tinycolor from "tinycolor2"
 import hex2color from "./lib/color2hex"
 
 import EngageCore from "@xpertana/engage-core"
-console.log("EC:")
-console.log(EngageCore)
 const engageDisplayExec = require("@xpertana/engage-display-commands-exec")
 const engageDisplayParse = require("@xpertana/engage-display-commands-parse")
 const engageCoreParse = require("@xpertana/engage-core-commands-parse")
@@ -100,7 +98,6 @@ export default class EngageClient extends Component {
     // _go --> will go to the flow
     // _run --> will run the flow
     // _jump ---> will jump to the label
-
     // in addition we look for a field in item named type...
     // if we have it, this is set with the itemvalue;
     if (item) {
@@ -293,33 +290,10 @@ export default class EngageClient extends Component {
 
     return (
       <div class="h-screen">
-        {/* <basefont
-          face="arial, verdana, sans-serif"
-          size="2"
-          color="#ff0000"
-        ></basefont> */}
-
         <Screen
           className="relative h-screen flex flex-col justify-between"
           args={this.state.UI.screen}
         >
-          {this.state.UI.bannerOn && (
-            <div
-              style={{
-                width: "100%",
-                top: "auto",
-                fontSize: "1.0em",
-                // position: "fixed",
-                top: this.state.UI.headerOn ? 40 : 0,
-              }}
-            >
-              <Banner
-                // theme={this.state.theme.banner}
-                handler={this.mainHandler.bind(this)}
-                args={this.state.UI.banner}
-              />
-            </div>
-          )}
           {this.state.UI.headerOn && (
             <div
               style={{
@@ -338,6 +312,23 @@ export default class EngageClient extends Component {
                   // ...this.stylelize(this.state.UI.header)
                   ...this.state.UI.header,
                 }}
+              />
+            </div>
+          )}
+          {this.state.UI.bannerOn && (
+            <div
+              style={{
+                width: "100%",
+                top: "auto",
+                fontSize: "1.0em",
+                // position: "fixed",
+                top: this.state.UI.headerOn ? 40 : 0,
+              }}
+            >
+              <Banner
+                // theme={this.state.theme.banner}
+                handler={this.mainHandler.bind(this)}
+                args={this.state.UI.banner}
               />
             </div>
           )}

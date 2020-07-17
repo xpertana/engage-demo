@@ -31,12 +31,22 @@ const SEO = ({ description, lang, meta, title }) => {
 
   return (
     <Helmet
+      //   <link
+      //   rel="stylesheet"
+      //   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+      // />
+
       htmlAttributes={{
         lang,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
+        {
+          name: `viewport`,
+          content:
+            "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+        },
         {
           name: `description`,
           content: metaDescription,
@@ -53,24 +63,15 @@ const SEO = ({ description, lang, meta, title }) => {
           property: `og:type`,
           content: `website`,
         },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.social.twitter,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
       ].concat(meta)}
-    />
+    >
+      <link
+        rel="stylesheet"
+        href="https://pro.fontawesome.com/releases/v5.13.1/css/all.css"
+        integrity="sha384-B9BoFFAuBaCfqw6lxWBZrhg/z4NkwqdBci+E+Sc2XlK/Rz25RYn8Fetb+Aw5irxa"
+        crossorigin="anonymous"
+      ></link>
+    </Helmet>
   )
 }
 
